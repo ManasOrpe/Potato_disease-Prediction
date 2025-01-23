@@ -1,10 +1,8 @@
 # Potato Disease Classification using Deep Learning
 
-<!--[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11s-kBquKT-ZiZwVMxR3KxuMKoUf6-ynd?usp=sharing) -->
-
 **Introduction**
 
-In the agriculture industry, farmers often face challenges in identifying diseases in potato plants, such as early blight, late blight, or determining if the plant is healthy. This uncertainty makes it difficult for farmers to apply the appropriate fertilizers and treatments, impacting crop yield and quality. To address this issue, we have developed a deep learning model using TensorFlow to classify images of potato plants, aiding in the accurate identification of diseases. By leveraging machine learning technology, our solution aims to improve agricultural practices, optimize resource allocation, and ultimately enhance the production of healthy potato plants.
+The agricultural sector frequently grapples with the challenge of identifying diseases in potato plants, such as early blight, late blight, or determining if the plant is healthy. These difficulties hinder timely and accurate application of treatments, adversely affecting yield and quality. To address this, we present a robust deep learning-based solution for potato disease classification, utilizing TensorFlow and a Convolutional Neural Network (CNN). This project not only streamlines disease identification but also fosters precision in farming practices, ultimately boosting productivity and quality.
 
 <br />
 
@@ -14,17 +12,15 @@ In the agriculture industry, farmers often face challenges in identifying diseas
 2. Installation
 3. Usage
 4. Features
-5. Contributing
-6. License
-7. Contact
+5. Future Scope
 
 <br />
 
 **Key Technologies and Skills**
 - Python
 - TensorFlow
-- Convolutional Neural Network (CNN)
 - Keras
+- Convolutional Neural Network (CNN)
 - OpenCV
 - Pillow
 - Numpy
@@ -35,9 +31,9 @@ In the agriculture industry, farmers often face challenges in identifying diseas
 
 **Installation**
 
-To run this project, you need to install the following packages:
+Install the following dependencies to run this project:
 
-```python
+```bash
 pip install tensorflow
 pip install opencv-python
 pip install pillow
@@ -47,8 +43,9 @@ pip install streamlit
 pip install streamlit_extras
 ```
 
-**Note:** If you face "ImportError: DLL load failed" error while installing TensorFlow,
-```python
+**Note:** For compatibility issues with TensorFlow, use the following command:
+
+```bash
 pip uninstall tensorflow
 pip install tensorflow==2.12.0 --upgrade
 ```
@@ -57,68 +54,64 @@ pip install tensorflow==2.12.0 --upgrade
 
 **Usage**
 
-To use this project, follow these steps:
-
-1. Clone the repository: ```git clone https://github.com/MadhurMohnish/ImageClassification.git```
-2. Install the required packages: ```pip install -r requirements.txt```
-3. Run the Streamlit app: ```streamlit run app.py```
-4. Access the app in your browser at ```http://localhost:8501```
+1. Clone the repository:
+```bash
+git clone https://github.com/ManasOrpe/Potato_disease-Prediction.git
+```
+2. Navigate to the project directory:
+```bash
+cd Potato_disease-Prediction
+```
+3. Install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+4. Run the Streamlit app:
+```bash
+streamlit run app.py
+```
+5. Access the app in your browser at:
+```http://localhost:8501```
 
 <br />
 
 **Features**
 
-#### Data Collection:
-   - We obtained the potato disease image dataset from Kaggle, a renowned platform for datasets and data science resources. This dataset consists of images depicting diseased potato plant leaves, meticulously labeled into categories such as early blight, healthy, and late blight.
+#### Dataset Details:
+   - The dataset was sourced from Kaggle and consists of images categorized as "Early Blight," "Healthy," and "Late Blight."
+   - Dataset includes training, validation, and testing subsets to ensure reliable performance evaluation.
+   
+📙 Dataset Link: [Kaggle - Plant Disease Dataset](https://www.kaggle.com/datasets/emmarex/plantdisease)
 
-   - This collection serves as a valuable asset for training and evaluating our deep learning model, facilitating the development of an effective solution for potato disease classification.
+#### Data Preprocessing:
+   - **Image Resizing:** Images resized to 256x256 pixels.
+   - **Batching:** Batches of 32 images are created.
+   - **Data Augmentation:** Implemented random flips, rotations, and brightness adjustments.
+   - **Caching and Prefetching:** Optimized the pipeline for faster training using TensorFlow's `cache` and `prefetch` utilities.
 
-📙 Dataset Link: [https://www.kaggle.com/datasets/emmarex/plantdisease](https://www.kaggle.com/datasets/emmarex/plantdisease)
+#### Model Architecture:
+   - Utilized Keras to design a CNN with layers for resizing, rescaling, convolution, pooling, and dense connections.
+   - Incorporated dropout layers to prevent overfitting and improve generalization.
+   
 
+#### Deployment:
+   - The trained model was saved for deployment.
+   - A Streamlit app provides a user-friendly interface for image upload and real-time disease classification.
 
-#### Preprocessing:
-
-   - **Image Reading and Resizing:** We initiate the preprocessing phase by leveraging TensorFlow to read all images from the directory. Each image undergoes resizing to a standardized dimension of 256x256 pixels. Furthermore, we organize the processed images into batches with a size of 32, thus forming a structured dataset ready for subsequent analysis.
-
-   - **Dataset Splitting:** To facilitate comprehensive model evaluation, we partition the dataset into three distinct subsets: training, validation, and testing. This segmentation ensures the robustness of our model's performance assessment by enabling separate training, validation, and testing phases, thus minimizing the risk of overfitting and enhancing generalization capabilities.
-
-   - **Data Pipeline Optimization:** In pursuit of efficient model training, we optimize the data pipeline using TensorFlow's built-in functionalities. The `cache` function is strategically employed to circumvent the repetitive loading and reading of training images across epochs. Concurrently, the `prefetch` function enhances training speed by proactively preparing subsequent batches of training images. These optimizations collectively streamline the training process, resulting in significant time savings and improved computational efficiency.
-
-
-#### Model Building and Training:
-
-   - **Model Building:** We construct the model architecture using Keras, incorporating layers for resizing, rescaling, random flip, and random rotation to preprocess the input images. Additionally, a Convolutional Neural Network (CNN) architecture is implemented, comprising convolutional layers, pooling layers, and dense layers with adjustable filters/units and activation functions.
-
-   - **Training:** During model training, we utilize the `Adam` optimizer, `sparse_categorical_crossentropy` loss function, and `Accuracy` metrics to optimize and evaluate the model's performance. The training process involves evaluating the model's performance on the validation dataset after each epoch, culminating in a final evaluation on the testing dataset. Upon completion of training, the model achieves an impressive accuracy of **97.8%**, signifying its capability to accurately classify potato disease images.
-
-
-#### Model Deployment and Inference:
-   - Following the completion of model training and evaluation, the trained model is saved to enable seamless deployment and inference on new images for classification purposes. To facilitate this process, a user-friendly Streamlit application is developed and deployed on the Hugging Face platform. 
-   - This application empowers users to upload new images and obtain real-time classification results, providing a convenient interface for leveraging the model's capabilities in practical scenarios.
 
 <br />
 
-<!-- 🎬 **Project Demo Video:** [https://youtu.be/XM7sg99a5no](https://youtu.be/XM7sg99a5no) -->
+**Future Scope**
 
-<!-- 🚀 **Application:** [https://huggingface.co/spaces/gopiashokan/Potato-Disease-Classification](https://huggingface.co/spaces/gopiashokan/Potato-Disease-Classification) -->
-
-<br />
-
-![](https://github.com/gopiashokan/Potato-Disease-Classification-using-Deep-Learning/blob/main/image/Inference_image_output.JPG)
-
-<br />
-
-<!-- **Contributing**
-
-Contributions to this project are welcome! If you encounter any issues or have suggestions for improvements, please feel free to submit a pull request.
+1. **Extended Crop Support:** Expand the model to classify diseases in other crops.
+2. **Mobile App Integration:** Develop a mobile application for real-time predictions in the field.
+3. **Automated Alerts:** Integrate with IoT devices to notify farmers of potential outbreaks.
+4. **Improved Datasets:** Augment dataset size and diversity to enhance model robustness.
+5. **Real-Time Video Analysis:** Implement real-time disease detection via live camera feeds.
 
 <br />
 
-**License**
-
-This project is licensed under the MIT License. Please review the LICENSE file for more details.
+**Sample Output:**
+![Model Inference](https://github.com/ManasOrpe/Potato_disease-Prediction/blob/main/image/Output.png.png)
 
 <br />
-
-
-
