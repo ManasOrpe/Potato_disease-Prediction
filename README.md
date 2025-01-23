@@ -120,11 +120,5 @@ This project is licensed under the MIT License. Please review the LICENSE file f
 
 <br />
 
-**Contact**
 
-📧 Email: gopiashokankiot@gmail.com 
-
-🌐 LinkedIn: [linkedin.com/in/gopiashokan](https://www.linkedin.com/in/gopiashokan)
-
-For any further questions or inquiries, feel free to reach out. We are happy to assist you with any queries. -->
 
