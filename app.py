@@ -25,7 +25,7 @@ def streamlit_config():
     page_background_color = """
     <style>
     [data-testid="stAppViewContainer"]  {
-    background-image: url("https://images.unsplash.com/photo-1501426026826-31c667bdf23d");
+    background-image: url("https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     }
 
@@ -39,9 +39,10 @@ def streamlit_config():
     st.markdown(page_background_color, unsafe_allow_html=True)
 
     # title and position
-    st.markdown(f'<h1 style="text-align: center;">Potato Disease Classification</h1>',
-                unsafe_allow_html=True)
+    st.markdown(f'<h1 style="text-align: center; color: darkgreen;">Potato Disease Classification</h1>',
+            unsafe_allow_html=True)
     add_vertical_space(4)
+
 
 
 # Streamlit Configuration Setup
@@ -51,11 +52,11 @@ streamlit_config()
 def prediction(image_path, class_names=['Potato__Early_blight', 'Potato_Late_blight', 'Potato__healthy']):
 
     img = Image.open(image_path)
-    img_resized = img.resize((256,256))
+    img_resized = img.resize((256,256))  
     img_array = tf.keras.preprocessing.image.img_to_array(img_resized)
     img_array = np.expand_dims(img_array, axis=0)
 
-    model = tf.keras.models.load_model(r'D:\Potato repo\Potato-Disease-Classification-using-Deep-Learning\model.keras')
+    model = tf.keras.models.load_model(r'D:\Potato repo\Potato-Disease-Classification-using-Deep-Learning\model.h5')
     prediction = model.predict(img_array)
 
     predicted_class = class_names[np.argmax(prediction)]
@@ -72,7 +73,7 @@ def prediction(image_path, class_names=['Potato__Early_blight', 'Potato_Late_bli
 col1,col2,col3  = st.columns([0.1,0.9,0.1])
 with col2:
     input_image = st.file_uploader(label='Upload the Image', type=['jpg', 'jpeg', 'png'])
-
+    
 
 if input_image is not None:
 

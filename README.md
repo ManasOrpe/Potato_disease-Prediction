@@ -86,7 +86,7 @@ To use this project, follow these steps:
 
 
 #### Model Building and Training:
-
+   
    - **Model Building:** We construct the model architecture using Keras, incorporating layers for resizing, rescaling, random flip, and random rotation to preprocess the input images. Additionally, a Convolutional Neural Network (CNN) architecture is implemented, comprising convolutional layers, pooling layers, and dense layers with adjustable filters/units and activation functions.
 
    - **Training:** During model training, we utilize the `Adam` optimizer, `sparse_categorical_crossentropy` loss function, and `Accuracy` metrics to optimize and evaluate the model's performance. The training process involves evaluating the model's performance on the validation dataset after each epoch, culminating in a final evaluation on the testing dataset. Upon completion of training, the model achieves an impressive accuracy of **97.8%**, signifying its capability to accurately classify potato disease images.
