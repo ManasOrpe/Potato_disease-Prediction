@@ -56,7 +56,7 @@ def prediction(image_path, class_names=['Potato__Early_blight', 'Potato_Late_bli
     img_array = tf.keras.preprocessing.image.img_to_array(img_resized)
     img_array = np.expand_dims(img_array, axis=0)
 
-    model = tf.keras.models.load_model(r'D:\Potato repo\Potato-Disease-Classification-using-Deep-Learning\model.h5')
+    model = tf.keras.models.load_model(r'model.h5')
     prediction = model.predict(img_array)
 
     predicted_class = class_names[np.argmax(prediction)]
