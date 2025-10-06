@@ -98,9 +98,7 @@ To use this project, follow these steps:
 
 <br />
 
-🎬 **Project Demo Video:** [https://youtu.be/XM7sg99a5no](https://youtu.be/XM7sg99a5no)
 
-🚀 **Application:** [https://huggingface.co/spaces/gopiashokan/Potato-Disease-Classification](https://huggingface.co/spaces/gopiashokan/Potato-Disease-Classification)
 
 <br />
 
@@ -122,9 +120,9 @@ This project is licensed under the MIT License. Please review the LICENSE file f
 
 **Contact**
 
-📧 Email: gopiashokankiot@gmail.com 
+📧 Email: manasorpe21@gmail.com
 
-🌐 LinkedIn: [linkedin.com/in/gopiashokan](https://www.linkedin.com/in/gopiashokan)
+🌐 LinkedIn: [linkedin.com/in/manasorpe123](www.linkedin.com/in/manasorpe123)
 
 For any further questions or inquiries, feel free to reach out. We are happy to assist you with any queries.
 
